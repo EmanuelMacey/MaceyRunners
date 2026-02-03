@@ -15,6 +15,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+      - name: Setup pnpm
+        if: ${{ hashFiles('**/pnpm-lock.yaml') != '' }}
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Cache pnpm store
         if: ${{ hashFiles('**/pnpm-lock.yaml') != '' }}
         uses: actions/cache@v4
@@ -42,9 +47,8 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -f pnpm-lock.yaml ]; then
-            corepack enable
-            corepack prepare pnpm@latest --activate
-            pnpm install --prefer-offline
+            # pnpm is set up by pnpm/action-setup step
+            pnpm install --frozen-lockfile --prefer-offline
           elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci
           elif [ -f yarn.lock ]; then
