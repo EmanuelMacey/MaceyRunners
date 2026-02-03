@@ -12,8 +12,7 @@ const supabaseUrl =
 
 const supabaseAnonKey = 
   Constants.expoConfig?.extra?.supabaseAnonKey || 
-  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || 
-  'REDACTED-SUPABASE-ANON-KEY';
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
 console.log('🔧 Initializing Supabase client...');
 console.log('📍 Supabase URL:', supabaseUrl);

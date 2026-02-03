@@ -31,7 +31,7 @@ All fetch functions were already wrapped with `useCallback`, so they're now prop
 Created `.env` file with your Supabase credentials:
 ```
 EXPO_PUBLIC_SUPABASE_URL=https://sytixskkgfvjjjemmoav.supabase.co
-EXPO_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+EXPO_PUBLIC_SUPABASE_ANON_KEY=REPLACE_WITH_YOUR_SUPABASE_ANON_KEY
 ```
 
 #### Supabase Client Configuration

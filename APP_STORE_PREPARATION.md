@@ -151,7 +151,7 @@ You must provide a privacy policy URL. Create a privacy policy that covers:
 Set these secrets in EAS:
 ```bash
 eas secret:create --scope project --name SUPABASE_URL --value https://sytixskkgfvjjjemmoav.supabase.co
-eas secret:create --scope project --name SUPABASE_ANON_KEY --value REDACTED-SUPABASE-ANON-KEY
+eas secret:create --scope project --name SUPABASE_ANON_KEY --value REPLACE_WITH_YOUR_SUPABASE_ANON_KEY
 ```
 
 ### Build Commands

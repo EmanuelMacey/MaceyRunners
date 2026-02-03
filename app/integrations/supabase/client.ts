@@ -3,8 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { Database } from './types';
 import { createClient } from '@supabase/supabase-js'
 
-const SUPABASE_URL = "https://sytixskkgfvjjjemmoav.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "REDACTED-SUPABASE-ANON-KEY";
+const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL || "https://sytixskkgfvjjjemmoav.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || "REPLACE_WITH_YOUR_SUPABASE_ANON_KEY";
 
 // Create a custom storage adapter that safely handles the absence of window
 const customStorage = {

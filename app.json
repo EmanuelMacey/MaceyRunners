@@ -72,7 +72,7 @@
     "extra": {
       "router": {},
       "supabaseUrl": "https://sytixskkgfvjjjemmoav.supabase.co",
-      "supabaseAnonKey": "REDACTED-SUPABASE-ANON-KEY"
+      "supabaseAnonKey": "REPLACE_WITH_YOUR_SUPABASE_ANON_KEY"
     }
   }
 }

@@ -245,7 +245,7 @@ Updated throughout the app:
 
 ```bash
 SUPABASE_URL=https://sytixskkgfvjjjemmoav.supabase.co
-SUPABASE_ANON_KEY=REDACTED-SUPABASE-ANON-KEY
+SUPABASE_ANON_KEY=REPLACE_WITH_YOUR_SUPABASE_ANON_KEY
 ```
 
 ## Deployment Commands
