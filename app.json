@@ -40,7 +40,7 @@
       ]
     },
     "web": {
-      "favicon": "./assets/images/77417a0d-d5f2-4d10-be09-c5caa4ff37f6.jpeg",
+      "favicon": "./assets/images/Web-logo-maceyrunners.png",
       "bundler": "metro"
     },
     "plugins": [
