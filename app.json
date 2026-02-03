@@ -3,6 +3,7 @@
     "name": "MaceyRunners",
     "slug": "MaceyRunners",
     "version": "1.0.9",
+    "sdkVersion": "52.0.0",
     "orientation": "default",
     "icon": "./assets/images/77417a0d-d5f2-4d10-be09-c5caa4ff37f6.jpeg",
     "userInterfaceStyle": "automatic",
