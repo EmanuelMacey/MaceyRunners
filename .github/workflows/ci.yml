@@ -15,18 +15,40 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+      - name: Cache pnpm store
+        if: ${{ hashFiles('**/pnpm-lock.yaml') != '' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Cache npm
+        if: ${{ hashFiles('**/package-lock.json') != '' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      - name: Cache yarn
+        if: ${{ hashFiles('**/yarn.lock') != '' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: |
           if [ -f pnpm-lock.yaml ]; then
-            # Use Corepack to enable pnpm (available on GitHub hosted runners)
             corepack enable
             corepack prepare pnpm@latest --activate
-            pnpm install
+            pnpm install --prefer-offline
           elif [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
             npm ci
           elif [ -f yarn.lock ]; then
-            npm install --frozen-lockfile
+            npm ci --prefer-offline
           else
             npm install
           fi
