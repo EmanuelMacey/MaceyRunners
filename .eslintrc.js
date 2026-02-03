@@ -23,7 +23,16 @@ module.exports = {
     browser: true,
   },
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
     'import/resolver': {
+      typescript: {
+        // Always attempt to resolve types under `<root>@types` directory even it doesn't contain source code,
+        // and use the project's tsconfig.json
+        alwaysTryTypes: true,
+        project: ['./tsconfig.json']
+      },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.native.js', '.native.tsx']
       }
